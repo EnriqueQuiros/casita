@@ -1,36 +1,49 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Header from "../components/Header";
-import RoomCard, { IRoom } from "../components/RoomCard";
+import { useRouter } from "next/router";
+import Header from "../../components/Header";
+import TaskCard from "../../components/TaskCard";
 
-const rooms: IRoom[] = [
+// list of placeholder ITask objects
+const tasks = [
   {
     id: "1",
-    name: "Living Room",
-    image: "https://source.unsplash.com/random/400x300",
+    name: "Task 1",
+    image:
+      "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
   },
   {
     id: "2",
-    name: "Bedroom",
-    image: "https://source.unsplash.com/random/400x300",
+    name: "Task 2",
+    image:
+      "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
   },
   {
     id: "3",
-    name: "Kitchen",
-    image: "https://source.unsplash.com/random/400x300",
+    name: "Task 3",
+    image:
+      "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
   },
   {
     id: "4",
-    name: "Bathroom",
-    image: "https://source.unsplash.com/random/400x300",
+    name: "Task 4",
+    image:
+      "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+  },
+  {
+    id: "5",
+    name: "Task 5",
+    image:
+      "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
   },
 ];
 
-const Home: NextPage = () => {
+const Room = () => {
+  const router = useRouter();
+  const { id } = router.query;
+
   return (
     <>
-      <div className="flex flex-col ">
-        <Header title='Home' />
+      <div className="flex flex-col mb-28">
+        <Header title="Room name" goBack="/" />
 
         <section className="p-6 flex justify-center">
           <svg
@@ -73,9 +86,9 @@ const Home: NextPage = () => {
         </section>
 
         <section className="bg-secondary text-black p-6 rounded-xl flex-grow -mb-12">
-          <div className="grid gap-6 grid-cols-2 lg:grid-cols-3">
-            {rooms.map((room) => (
-              <RoomCard key={room.id} room={room} />
+          <div className="grid gap-3 grid-cols-1">
+            {tasks.map((task) => (
+              <TaskCard key={task.id} task={task} />
             ))}
           </div>
         </section>
@@ -84,4 +97,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Room;

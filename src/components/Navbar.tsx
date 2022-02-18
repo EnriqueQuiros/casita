@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="text-lg bg-primary text-white flex justify-between p-3">
+    <nav className="text-lg bg-primary text-white flex justify-between p-3 fixed bottom-0 w-full">
       Casita
       <div className="flex gap-3">
         <Link href="/">
