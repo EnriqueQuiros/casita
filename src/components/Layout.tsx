@@ -5,7 +5,7 @@ interface Props {
 }
 const Layout = ({ children }: Props) => {
   return (
-    <div className="flex flex-col justify-between min-h-screen">
+    <div className="flex flex-col justify-between min-h-screen bg-primary">
       <main className="">{children}</main>
       <Navbar />
     </div>
