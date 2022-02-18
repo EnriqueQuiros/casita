@@ -3,15 +3,15 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 
-const Home: NextPage = () => {
+const Setup: NextPage = () => {
   return (
     <>
     <h1 className="text-3xl font-bold ">
-      Hello world!
+      Setup Home
     </h1>
 
     </>
   )
 }
 
-export default Home
+export default Setup
