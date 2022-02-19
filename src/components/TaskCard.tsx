@@ -1,5 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
-import PencilIcon from "../../public/pencil.svg";
+import { useState } from "react";
+import ChecklIcon from "../../public/check.svg";
+import CogIcon from "../../public/cog.svg";
+
 export interface ITask {
   id: string;
   name: string;
@@ -11,13 +15,15 @@ interface TaskCardProps {
 }
 
 const TaskCard = ({ task }: TaskCardProps) => {
+  const [showCard, setShowCard] = useState(false);
+
   return (
-    <Link href={`/task/${task.id}`}>
-      <a>
-        <div className="bg-white p-6 flex justify-between gap-3 shadow-md rounded-md">
+    <div className="bg-white shadow-md rounded-md">
+      <button onClick={() => setShowCard(!showCard)} className="w-full">
+        <div className="p-6 flex justify-between gap-3 ">
+
           <div className="flex flex-col justify-between">
             <h3 className="text-primary font-bold text-xl">{task.name}</h3>
-
             <h3 className="text-primary ">Every 5 days</h3>
           </div>
 
@@ -42,9 +48,22 @@ const TaskCard = ({ task }: TaskCardProps) => {
             </section>
             <h3 className="text-primary ">11 days ago</h3>
           </div>
+          
         </div>
-      </a>
-    </Link>
+      </button>
+
+      {showCard && (
+        <div className="p-6 pt-0 flex justify-between">
+          <button className=" bg-green py-2 px-12 rounded-md shadow-sm">
+          <Image src={ChecklIcon} alt="Check icon" height={25} width={25} />
+          </button>
+
+          <button className="bg-secondary py-2 px-12 rounded-md shadow-sm">
+          <Image src={CogIcon} alt="Cog icon" height={25} width={25} />
+          </button>
+        </div>
+      )}
+    </div>
   );
 };
 export default TaskCard;
