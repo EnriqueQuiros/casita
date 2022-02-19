@@ -5,8 +5,8 @@ interface Props {
 }
 const Layout = ({ children }: Props) => {
   return (
-    <div className="flex flex-col  min-h-screen bg-primary">
-      <main className="max-w-lg sm:mx-auto">{children}</main>
+    <div className="md:grid md:place-items-center min-h-screen bg-primary">
+      <main className="md:w-1/2 ">{children}</main>
       <Navbar />
     </div>
   );

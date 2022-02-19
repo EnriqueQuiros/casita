@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Header from "../components/Header";
 import RoomCard, { IRoom } from "../components/RoomCard";
-import PencilIcon from "../../public/pencil.svg";
+
 const rooms: IRoom[] = [
   {
     id: "1",
@@ -29,7 +29,7 @@ const rooms: IRoom[] = [
 const Home: NextPage = () => {
   return (
     <>
-      <div className="flex flex-col ">
+      <div className="flex flex-col  mb-28">
         <Header title='Home' />
 
         <section className="p-6 flex justify-center">
@@ -72,7 +72,7 @@ const Home: NextPage = () => {
           </svg>
         </section>
 
-        <section className="bg-secondary text-black p-6 rounded-xl flex-grow -mb-12">
+        <section className="bg-secondary text-black p-6 rounded-xl flex-grow  -mb-12">
           <div className="grid gap-6 grid-cols-2 lg:grid-cols-3">
             {rooms.map((room) => (
               <RoomCard key={room.id} room={room} />

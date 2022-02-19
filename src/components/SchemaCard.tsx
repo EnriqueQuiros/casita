@@ -39,9 +39,9 @@ const SchemaCard = ({ schema, type }: SchemaCardProps) => {
 
         {schema &&
           schema.map((room, key) => (
-            <div className="bg-white p-3 my-2 flex justify-between gap-3 shadow-sm rounded-md">
+            <div className="bg-white p-3 my-2 flex justify-between gap-3 shadow-sm rounded-md"  key={key}>
               <div className="flex gap-3">
-                <Link href={`/task/${room.id}`} key={key}>
+                <Link href={`/task/${room.id}`} >
                   <a>
                     <div className="">
                       <h3 className="text-primary text-md">{room.name}</h3>

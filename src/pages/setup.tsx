@@ -60,7 +60,7 @@ const Setup: NextPage = () => {
   const groupedRooms = groupByType(rooms);
   //console.log(groupedRooms)
 
-  const roomTypeArray = Object.values(roomTypes)
+  const roomTypeArray = Object.values(roomTypes);
   //console.log(roomTypeArray)
 
   return (
@@ -72,17 +72,15 @@ const Setup: NextPage = () => {
           <div className="grid gap-3 grid-cols-1">
             {
               // map through colorValueArray and create a SchemaCard for each
-              roomTypeArray.map((roomType) => {
+              roomTypeArray.map((roomType, key) => {
                 return (
                   <SchemaCard
-                    key={roomType}
+                    key={key}
                     type={roomType}
                     schema={groupedRooms[roomType]}
                   />
                 );
-              }
-        
-              )
+              })
             }
           </div>
         </section>
