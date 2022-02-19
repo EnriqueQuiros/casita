@@ -30,7 +30,7 @@ const RoomCard = ({ room }: RoomCardProps) => {
             />
           </svg>
 
-          <h3 className="text-primary font-bold text-xl">{room.name}</h3>
+          <h3 className="text-primary font-bold text-lg">{room.name}</h3>
 
       
         </div>

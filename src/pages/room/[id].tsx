@@ -1,3 +1,4 @@
+import { NextPage } from "next";
 import { useRouter } from "next/router";
 import Header from "../../components/Header";
 import TaskCard from "../../components/TaskCard";
@@ -36,7 +37,7 @@ const tasks = [
   },
 ];
 
-const Room = () => {
+const Room: NextPage = () => {
   const router = useRouter();
   const { id } = router.query;
 
