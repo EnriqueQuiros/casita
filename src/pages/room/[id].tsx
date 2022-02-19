@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import { useRouter } from "next/router";
 import Header from "../../components/Header";
 import TaskCard from "../../components/TaskCard";
-
+import PencilIcon from "../../public/pencil.svg";
 // list of placeholder ITask objects
 const tasks = [
   {

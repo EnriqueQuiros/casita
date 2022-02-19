@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Header from "../components/Header";
 import RoomCard, { IRoom } from "../components/RoomCard";
-
+import PencilIcon from "../../public/pencil.svg";
 const rooms: IRoom[] = [
   {
     id: "1",

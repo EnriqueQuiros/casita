@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import PencilIcon from "../../public/pencil.svg";
 export interface ITask {
   id: string;
   name: string;
